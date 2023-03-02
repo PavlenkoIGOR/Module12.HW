@@ -11,7 +11,7 @@ namespace HW
     {
         static void Main(string[] args)
         {
-            IAds ads = new ShowAdvertisement();
+            
             List<User> usersList = new List<User>();
             usersList.Add(new User() { Login = "John_Wick", Name = "Вася", IsPremium = false });
             usersList.Add(new User() { Login = "SoulDestroyer", Name = "Константин", IsPremium = true });
@@ -19,6 +19,13 @@ namespace HW
             usersList.Add(new User() { Login = "Sergey78", Name = "Сергей", IsPremium = false });
             usersList.Add(new User() { Login = "Venya", Name = "Вениамин", IsPremium = true });
 
+            SomeAction(usersList);
+
+            Console.ReadKey();
+        }
+        static void SomeAction(List<User> usersList)
+        {
+            IAds ads = new ShowAdvertisement();
             foreach (User user in usersList)
             {
                 if (user.IsPremium == false)
@@ -34,8 +41,6 @@ namespace HW
                 }
 
             }
-
-            Console.ReadKey();
         }
     }
 }
