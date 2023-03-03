@@ -11,13 +11,24 @@ namespace HW
     {
         static void Main(string[] args)
         {
-            
-            List<User> usersList = new List<User>();
-            usersList.Add(new User() { Login = "John_Wick", Name = "Вася", IsPremium = false });
-            usersList.Add(new User() { Login = "SoulDestroyer", Name = "Константин", IsPremium = true });
-            usersList.Add(new User() { Login = "PavelSmolyaninov", Name = "Павел", IsPremium = true });
-            usersList.Add(new User() { Login = "Sergey78", Name = "Сергей", IsPremium = false });
-            usersList.Add(new User() { Login = "Venya", Name = "Вениамин", IsPremium = true });
+
+            //List<User> usersList = new List<User>();
+            //usersList.Add(new User() { Login = "John_Wick", Name = "Вася", IsPremium = false });
+            //usersList.Add(new User() { Login = "SoulDestroyer", Name = "Константин", IsPremium = true });
+            //usersList.Add(new User() { Login = "PavelSmolyaninov", Name = "Павел", IsPremium = true });
+            //usersList.Add(new User() { Login = "Sergey78", Name = "Сергей", IsPremium = false });
+            //usersList.Add(new User() { Login = "Venya", Name = "Вениамин", IsPremium = true });
+            ///
+            ///но так быстрее:
+            ///
+            List<User> usersList = new List<User>()
+            {
+                new User() { Login = "John_Wick", Name = "Вася", IsPremium = false },
+                new User() { Login = "SoulDestroyer", Name = "Константин", IsPremium = true },
+                new User() { Login = "PavelSmolyaninov", Name = "Павел", IsPremium = true },
+                new User() { Login = "Sergey78", Name = "Сергей", IsPremium = false },
+                new User() { Login = "Venya", Name = "Вениамин", IsPremium = true },
+            };
 
             SomeAction(usersList);
 
@@ -36,7 +47,7 @@ namespace HW
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine($"\tДобро пожаловать {user.Name}");
+                    Console.WriteLine($"\tДобро пожаловать, {user.Name}");
                     Console.ForegroundColor = ConsoleColor.White;
                 }
 
